@@ -1,0 +1,22 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "João Albuquerque", email = "joao.albuquerque@quintoandar.com.br"},
+]
+dependencies = [
+    "openai>=0.27.0",
+    "slack-bolt>=1.16.2",
+    "slack>=0.0.2",
+    "python-dotenv>=1.0.0",
+]
+requires-python = ">=3.11"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
+
+[tool]
+[tool.pdm]
