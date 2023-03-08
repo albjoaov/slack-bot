@@ -29,17 +29,6 @@ def handle_message_events(event, slack_logger):
     # Create prompt for ChatGPT
     prompt = event["text"].split(">")[1]
 
-    # Let the user know that we are busy with the request
-    try:
-        client.chat_postMessage(
-            channel=event["channel"],
-            thread_ts=event["ts"],
-            text="Foi isso que você pediu?"
-        )
-    except SlackApiError as e:
-        logging.error("Error sending message: {}".format(e))
-        slack_logger.error("Error sending message: {}".format(e))
-
     # Check ChatGPT
     openai.api_key = os.environ["OPENAI_API_KEY"]
     response_body = openai.ChatCompletion.create(
